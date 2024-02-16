@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -24,6 +25,7 @@ import com.example.demo.repositories.*;
 import com.example.demo.entities.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @WebMvcTest(DoctorController.class)
 class DoctorControllerUnitTest{
 
@@ -113,6 +115,7 @@ class DoctorControllerUnitTest{
 
 }
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @WebMvcTest(PatientController.class)
 class PatientControllerUnitTest{
 
@@ -201,6 +204,7 @@ class PatientControllerUnitTest{
 
 }
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @WebMvcTest(RoomController.class)
 class RoomControllerUnitTest{
 

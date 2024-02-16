@@ -41,7 +41,7 @@ class EntityUnitTest {
 
 
     @BeforeAll
-    public void initialize(){
+    void initialize(){
         d1 = new Doctor("Carlos", "Perez", 45, "carlos.perez@medicur.com");
         p1 = new Patient("Jose Luis", "Olaya", 37, "j.olaya@email.com");
         r1 = new Room("Dermatology");
