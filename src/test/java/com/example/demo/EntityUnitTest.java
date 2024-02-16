@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -13,7 +12,6 @@ import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
@@ -39,16 +37,7 @@ class EntityUnitTest {
     private Appointment a3;
 
     private LocalDateTime startsAt1;
-
-    LocalDateTime finishesAt1;
-
-    private LocalDateTime startsAt2;
-
-    LocalDateTime finishesAt2;
-
-    private LocalDateTime startsAt3;
-
-    LocalDateTime finishesAt3;
+    private LocalDateTime finishesAt1;
 
 
     @BeforeAll
@@ -59,14 +48,14 @@ class EntityUnitTest {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy");
 
-        startsAt1= LocalDateTime.parse("19:30 24/04/2023", formatter);
+        startsAt1 = LocalDateTime.parse("19:30 24/04/2023", formatter);
         finishesAt1 = LocalDateTime.parse("20:30 24/04/2023", formatter);
 
-        startsAt2= LocalDateTime.parse("19:35 24/04/2023", formatter);
-        finishesAt2 = LocalDateTime.parse("20:25 24/04/2023", formatter);
+        LocalDateTime startsAt2 = LocalDateTime.parse("19:35 24/04/2023", formatter);
+        LocalDateTime finishesAt2 = LocalDateTime.parse("20:25 24/04/2023", formatter);
 
-        startsAt3= LocalDateTime.parse("20:31 24/04/2023", formatter);
-        finishesAt3 = LocalDateTime.parse("20:50 24/04/2023", formatter);
+        LocalDateTime startsAt3= LocalDateTime.parse("20:31 24/04/2023", formatter);
+        LocalDateTime finishesAt3 = LocalDateTime.parse("20:50 24/04/2023", formatter);
 
         a1 = new Appointment(p1, d1, r1, startsAt1, finishesAt1);
         a2 = new Appointment(p1, d1, r1, startsAt2, finishesAt2);
