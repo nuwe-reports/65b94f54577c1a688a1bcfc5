@@ -1,3 +1,3 @@
 # java-template
 # Database Diagram
-![Sonny and Mariel high fiving.](/docs/database-relationships-diagram.png)
+![Database Diagram](/docs/database-relationships-diagram.png)
